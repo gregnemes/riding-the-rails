@@ -1,0 +1,42 @@
+/********** @VARIABLES *********/
+
+// $brand: #002B57;
+$brand: lighten(#002B57,3%);
+
+$white: #ffffff;
+$ultra-light: #fafafa;
+$light: #F1F1F1;
+$medium-light: #DEE4E8;
+$medium: #9B9B9B;
+$dark: #222;
+
+$error: salmon;
+
+
+$transition-duration: .75s;
+
+$lg-size: 1201px;
+$lg-query: "min-width: #{ $lg-size }";
+
+$md-size: 1200px;
+$md-query: "max-width: #{$md-size}";
+
+$sm-size: 992px;
+$sm-query: "max-width: #{$sm-size}";
+
+$xs-size: 767px;
+$xs-query: "max-width: #{ $xs-size }";
+
+
+$paddingInner: 45px;
+$paddingOuter: 210px;
+$paddingInner-md: 30px;
+$paddingOuter-md: 160px;
+$paddingInner-sm: 15px;
+$paddingOuter-sm: 115px;
+$paddingInner-xs: 15px;
+$paddingOuter-xs: 15px;
+$paddingCombined: $paddingInner + $paddingOuter;
+$paddingCombined-md: $paddingInner-md + $paddingOuter-md;
+$paddingCombined-sm: $paddingInner-sm + $paddingOuter-sm;
+$paddingCombined-xs: $paddingInner-xs + $paddingOuter-xs;

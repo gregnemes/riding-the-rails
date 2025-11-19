@@ -1,0 +1,73 @@
+@import '_variables';
+@import '_mixins';
+
+.wy-control-group-wysiwyg{
+  
+  p{
+  	font-family: "ff-tisa-web-pro";
+  	line-height: 1.9;
+  }
+
+  p,h3,h4{
+   	padding-left: 30px;
+  	padding-right: 30px; 	
+  }
+
+  figure{
+	width: 100% !important;
+	float: none;
+	border: none;
+
+    &.wy-figure-small{
+		width: 40% !important;
+
+	    &.wy-figure-left{
+	      	float: left;        
+	        margin-right: 30px;
+	        margin-left: 0;
+	    }
+	    &.wy-figure-right{
+	        float: right;        
+	        margin-left: 30px;
+	        margin-right: 0;
+	    }      
+    }
+  }
+
+  blockquote{
+  	font-family: "SharpSansNo2-Medium";
+    width: 100%;
+    color: $brand;
+    border: none;
+
+    em{
+      font-style: normal !important;
+    }
+
+    *{
+      font-family: "SharpSansNo2-Medium" !important;
+      font-style: normal !important;
+    }
+  }
+
+  figcaption{
+  	font-family: "SharpSansNo2-Semibold";
+    text-align: right;
+    color: $medium;
+    font-size: 14px;
+  }
+
+  h3,h4,h5{
+  	font-family: "SharpSansNo2-Semibold";
+  }
+
+  h3{
+    margin-top: 3px;
+  }
+
+  h4{
+    color: $medium;
+    margin: 0;
+  }
+  
+}

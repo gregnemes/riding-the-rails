@@ -1,0 +1,147 @@
+/********** @MIXINS *********/
+
+@mixin transform($properties){
+	transform: $properties;
+	-moz-transform: $properties; 
+	-webkit-transform: $properties; 
+	-o-transform: $properties; 
+	-ms-transform: $properties; 			
+}	
+
+@mixin transition($property: all,$duration: $transition-duration, $delay: 0s, $easing: ease){
+	transition: $property $duration $delay $easing;
+	-moz-transition: $property $duration $delay $easing; 
+	-webkit-transition: $property $duration $delay $easing; 
+	-o-transition: $property $duration $delay $easing; 	
+	-ms-transition: $property $duration $delay $easing;
+}
+
+@mixin box-shadow($x: 0px, $y: 0px, $size: 4px, $shadow-color: rgba(50,50,50,.25)){
+	-o-box-shadow: $x $y $size $shadow-color;
+	-ms-box-shadow: $x $y $size $shadow-color;
+	-moz-box-shadow: $x $y $size $shadow-color;
+	-webkit-box-shadow: $x $y $size $shadow-color;
+	box-shadow: $x $y $size $shadow-color;		
+}
+
+@mixin text-shadow($x: 1px, $y: 1px, $spread: 0px, $shadow-color: rgba(50,50,50,.25)){
+	-o-text-shadow: $x $y $spread $shadow-color;
+	-ms-text-shadow: $x $y $spread $shadow-color;
+	-moz-text-shadow: $x $y $spread $shadow-color;
+	-webkit-text-shadow: $x $y $spread $shadow-color;
+	text-shadow: $x $y $spread $shadow-color;	
+}
+
+@mixin opacity($opacity){
+	opacity: $opacity;
+	$opacity-ms: $opacity * 100;
+	filter: alpha(opacity=$opacity-ms)
+}
+
+@mixin size-dependent( $selector ) {
+	#{ $selector } {
+		@content;
+	}
+
+	@media ( $lg-query ) {
+		#{ $selector }-lg {
+			@content;
+		}
+	}
+
+	@media ( $md-query ) {
+		#{ $selector }-md {
+			@content;
+		}
+	}
+
+	@media ( $sm-query ) {
+		#{ $selector }-sm {
+			@content;
+		}
+	}
+
+	@media ( $xs-query ) {
+		#{ $selector }-xs {
+			@content;
+		}
+	}
+}
+
+@mixin border-radius($radius: 0px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;			
+	border-radius: $radius;
+}
+
+@mixin animation($name: animation, $duration: 1s, $direction: forwards, $easing: ease, $delay: 0s, $iteration: 1){	
+	animation: $name $duration $easing $delay $iteration;
+	-ms-animation: $name $duration $easing $delay $iteration;
+	-webkit-animation: $name $duration $easing $delay $iteration;
+	-o-animation:move $name $duration $easing $delay $iteration;
+	-moz-animation:move $name $duration $easing $delay $iteration;
+	animation-fill-mode: $direction;
+ 	-webkit-animation-fill-mode: $direction;	
+ 	-moz-animation-fill-mode: $direction;	
+ 	-ms-animation-fill-mode: $direction;	
+ 	-o-animation-fill-mode: $direction;	
+}
+
+@mixin animation-direction( $direction: normal ) {
+	-webkit-animation-direction:$direction;
+	-moz-animation-direction: $direction;
+	animation-direction: $direction;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+ 
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin gradient{ 
+	background: #60b3ff;
+	background: #ffffff; 
+	background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eeeeee)); 
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); 
+	background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); 
+	background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); 
+	background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); 
+}
+
+@mixin gradient-dark{
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); 
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); 
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); 
+}
+
+@mixin keyframes($animation-name: animation) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes  #{$animation-name} {
+    @content;
+  }  
+  @-ms-keyframes  #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes  #{$animation-name} {
+    @content;
+  }  
+  @keyframes  #{$animation-name} {
+    @content;
+  }
+}

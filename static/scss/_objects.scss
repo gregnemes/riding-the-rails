@@ -1,0 +1,377 @@
+/*
+OBJECTS
+heights
+margins and padding	
+structure and position
+backgrounds
+animations
+fancy objects
+*/
+
+/********** @MARGINS AND PADDING *********/
+
+@for $i from 1 through 10 {
+  .vh#{$i}0{ 
+  	height: 10vh * $i;
+  }
+}
+
+@for $i from 1 through 10 {
+  .vw#{$i}0{ 
+  	width: 10vw * $i;
+  }
+}
+
+
+/********** @MARGINS AND PADDING *********/
+
+@for $i from 0 through 9 {
+  @include size-dependent( ".m#{$i}" ) {
+  	margin-top: 1em * $i;  	
+  	margin-bottom: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  @include size-dependent( ".mb#{$i}" ) {
+  	margin-bottom: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  @include size-dependent( ".mt#{$i}" ) {
+  	margin-top: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  @include size-dependent( ".ml#{$i}" ) {
+  	margin-left: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  @include size-dependent( ".mr#{$i}" ) {  
+  	margin-right: 1em * $i;
+  }
+}
+
+
+@for $i from 0 through 9 {
+  .p#{$i} { 
+  	padding: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  .pt#{$i} { 
+  	padding-top: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  .pb#{$i} { 
+  	padding-bottom: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  .pl#{$i} { 
+  	padding-left: 1em * $i;
+  }
+}
+
+@for $i from 0 through 9 {
+  .pr#{$i} { 
+  	padding-right: 1em * $i;
+  }
+}
+
+.padded-less{
+	padding-top: 2.5%;
+	padding-bottom: 2.5%;
+}
+
+.padded{
+	padding-top: 4%;
+	padding-bottom: 4.25%;
+}
+
+.padded-more{
+	padding-top: 8%;
+	padding-bottom: 9%;
+}
+
+
+
+/********** @BACKGROUNDS *********/
+
+
+@include size-dependent( ".bg-light" ) {
+	background: $light;
+}
+
+@include size-dependent( ".bg-white" ) {
+	background: white;
+}
+
+.bg-medium{
+	background: $medium;
+}
+
+.bg-medium-light{
+	background: $medium-light;
+}
+
+.bg-brand{
+	background: $brand;
+}
+
+.bg-brand-light{
+	background: lighten($brand, 65%);
+}
+
+.bg-dark{
+	background: $dark;
+}
+
+
+.bg-yellow{
+	background: yellow;
+}
+
+.bg-pink{
+	background: pink;
+}
+
+.bg-orange{
+	background: orange;
+}
+
+.bg-green{
+	background: green;
+}
+
+.bg-gradient{
+ 	@include gradient();
+}
+
+.background-cover{
+	background-size: cover;
+}
+
+.background-mask-light{
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(255,255,255,.75);
+		@include transition(all);
+	}
+}
+
+.background-mask-dark{
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		$background-dark: darken($brand, 45%);
+		background: transparentize($background-dark, .72);
+		@include transition(all);
+	}
+}
+
+.background-mask-brand{
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		$background-brand: lighten($brand, 20%);
+		background: transparentize($background-brand, .5);
+		@include transition(all);
+	}
+}
+
+/********** @BORDERS AND SHADOWS *********/
+
+.shadow{
+	@include box-shadow(0,0,1px,rgba(53,50,50,.35));
+}
+
+.border{
+	border: 2px solid;
+}
+
+.border-brand{
+	border: 2px solid $brand;
+}
+
+
+/********** @STRUCTURE AND POSITION *********/
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+@include size-dependent(".vertical-center") {
+	margin-top: 0;
+	position: relative;
+	top: 48%;
+	@include transform(translate(0,-50%));	
+}
+
+.display-block{
+	display: block;
+}
+
+.display-inline {
+	display: inline;
+}
+
+.crop{
+	overflow: hidden;
+}
+
+
+
+/********** @ANIMATIONS *********/
+
+
+$slide-distance-vertical: 20px;
+
+.fade-in{
+	@include animation(fade-in, 1s, ease, 0s, 1);
+}
+@include keyframes(fade-in){
+	0% { opacity: 0; @include opacity(0);  }
+	100% { opacity: 1; @include opacity(1); }	
+}
+
+.fade-out{
+	@include animation(fade-out, 1s, ease, 0s, 1);
+}
+@include keyframes(fade-out){
+	0% { opacity: 1; @include opacity(1);  }
+	100% { opacity: 0; @include opacity(0);}	
+}
+
+.fade-in-slide-up{
+	@include animation(fade-in-slide-up, .5s, ease, 1s, 1);
+	position: relative;
+}
+@include keyframes(fade-in-slide-up){
+	0% { opacity: 0; top: $slide-distance-vertical; }
+	50% { opacity: 1; top: $slide-distance-vertical / 3; }
+	100% { opacity: 1; top: 0px; }	
+}
+
+.fade-in-slide-down{
+	@include animation(fade-in-slide-down, .5s, ease, 1s, 1);
+	position: relative;
+}
+@include keyframes(fade-in-slide-down){
+	0% { opacity: 0; top: -1 * $slide-distance-vertical; }	
+	50% { opacity: 1; top: -1 * ($slide-distance-vertical / 3); }
+	100% { opacity: 1; top: 0px; }	
+}
+
+
+
+/********** @FANCY OBJECTS *********/
+
+// .loading{
+// 	opacity: 0;
+// 	@include transition(opacity,1s);
+// }
+
+// .loaded{
+// 	opacity: 1;
+// }
+
+.block{
+	position: relative;
+	width: 100%;
+	display: block;
+	z-index: 1;
+
+	&.crop{
+		overflow: hidden;
+	}
+
+	&.active{
+
+	}
+
+	&.activated{
+
+	}
+
+}
+
+.block-background{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-size: cover;
+	background-position: center top;	
+	
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		background: rgba(0,0,0,0);
+		@include transition(all);
+	}
+}
+
+.background{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#edit-button{
+	position: fixed;
+	bottom: 80px;
+	right: 30px;
+	z-index: 10000;
+	width: 40px;
+	height: 40px;
+	display: table;
+	@include transition();
+	background: #00f;
+	padding: 5px 9px;
+
+	&:hover{
+		bottom: 83px;
+		background: #11f;
+	}
+}
+

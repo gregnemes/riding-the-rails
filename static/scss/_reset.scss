@@ -1,0 +1,53 @@
+
+/********** @RESET *********/
+
+//sass error output
+body:before{
+	background: yellow;
+	display: block;
+	padding: 15px;
+}
+
+::selection{
+    color: white;
+    background: $brand;
+}
+
+::-moz-selection{
+    color: white;
+    background: $brand;
+}
+
+img,video,svg{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+a{
+	color: $dark;
+	text-decoration: none;
+	&:hover,&:focus{
+		color:$brand;
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ol,ul{
+	-webkit-padding-start: 0px;
+}
+
+*{
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+

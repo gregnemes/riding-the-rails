@@ -1,0 +1,256 @@
+
+/********** @MENU *********/
+
+#menu{
+	width: 512px;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 100px 90px 100px 45px;
+	background: $light;
+	z-index: 9;	
+	overflow: scroll;
+	//@include transform(translateX(-150%) scale(1.5));
+	@include transform(translateX(-150%));
+
+	@include transition(transform,.25s);
+	-webkit-transform-origin: center center;
+	border-right: 1px solid #ddd;
+
+	&.open{
+		//@include transform(translateX(0%) scale(1));
+		@include transform(translateX(0%));
+
+	}
+
+	li{
+		line-height: 3;
+
+		a{
+			padding-bottom: 2px;
+			border-bottom: 2px solid transparent;
+			font-size: 17px;
+			@extend .tracked;
+
+			&:hover{
+				color: $brand;
+				border-bottom: 2px solid $brand;				
+			}
+
+			&.active{
+				border-bottom: 2px solid $dark;
+			}
+		}
+
+		ul{
+			margin-bottom: 20px;
+			padding-left: 22px;
+		}
+
+		li{
+			line-height: 1;
+			margin-bottom: .5em;
+
+			a{
+				font-size: 13px;
+
+				&.active{
+					border-bottom: 2px solid $dark;
+				}
+
+				&:hover{
+					border-bottom-color: transparent;
+				}				
+			}
+
+		}
+
+		&#contact-link{
+			font-size: 16px;
+			@extend .tracked;
+			line-height: 2;
+
+			a{
+				margin-left: 15px;
+				font-size: 14px;
+				@extend .tracked;
+				text-transform: lowercase;			
+			}
+
+		}
+	}
+
+}
+
+#blanket{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 8;
+	background: transparent;
+	@include transform(translate(-100%,0));
+	// @include transition(background,.8s);
+	
+	&.on{
+		@include transform(translate(0,0));
+		// background: transparentize($brand, .65);		
+	}
+}
+
+main,footer{
+	@include transition(all,.35s);
+	
+}
+
+.menu-open{
+	main,footer{
+
+		@include transform(translate(512px,0));
+
+
+	}
+}
+
+
+
+/********** @HEADER *********/
+
+#header{
+	position: fixed;
+	top: 15px;
+	left: 20px;
+	z-index: 8;
+	//border: 1px solid $brand;
+
+
+	a{
+		@extend .medium;
+		@extend .tracked-more;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	li{
+		//@include transform(translateX(-400px));
+		@include transition(transform,.5s);
+		margin-bottom: 0em;
+		margin-top: 0px;
+	}
+
+	&.after{
+		li{
+			@include transform(translateX(0px));
+		}
+	}
+
+}
+
+#menu-toggle{
+	position: fixed;
+	width: 134px;
+	top: 75px;
+	left: 13px;
+	z-index: 10;
+	@include transform(translateX(0px));
+
+	#hamburger{
+		display: block;
+		float: left;
+		background: rgba(255,255,255,.85);
+		padding: 3px 8px;
+		@include border-radius(100px);
+
+		.line{
+			width: 18px;
+			height: 2px;
+			background: $brand;
+			display: block;
+			margin: 5px auto;
+			@include transition(all,.35s);			
+		}
+	}
+
+	#label{
+		float: left;
+		@include transform(translateX(-50px));
+		opacity: 0;
+		@include opacity(0);
+		@include transition(all,.35s);	
+
+		span{
+			font-size: 15px;
+			@extend .tracked-more;
+			position: relative;
+			top: -2px;
+			left: 10px;
+		}
+	}
+
+	&:hover{
+		#hamburger{
+			background: $light;
+		}
+
+		#label{
+			@include transform(translateX(0px));
+			opacity: 1;
+			@include opacity(1);
+		}
+
+	}
+
+}
+
+.menu-open{
+
+	#menu-toggle{
+		//background: $light;
+
+		#hamburger{
+			background: none;
+			// outline: 1px solid $brand;
+
+			.line-1{
+				@include transform(rotate(-45deg) translate(0,4px));
+			}
+
+			.line-2{
+				display: none;
+			}
+
+			.line-3{
+				@include transform(rotate(45deg) translate(-1px,-5px));
+			}			
+
+
+		}
+
+		#label{
+			display: none;	
+		}	
+
+		&:hover{
+			#hamburger{
+				background: $light;
+			}
+		}
+
+	}
+
+}
+
+
+#cms{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	z-index: 11;
+	background: rgba(220,220,220,.1);
+}
+

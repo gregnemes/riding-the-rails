@@ -1,0 +1,165 @@
+
+$media-element-height: 40vw;
+
+.shortcode-building{
+	background: $ultra-light;
+	height: $media-element-height;
+	max-width: none;
+	width: 100vw;
+	font-size: 0;
+	color: transparent;
+	margin: 60px 0;
+	padding: 0;
+
+	&.no-content{
+
+		&:before{
+			padding-top: 30px;
+			content: 'media item not found:';
+			display: block;
+			color: $error;
+			font-size: 18px;
+			@extend .ss-semibold;
+			@extend .tracked;
+		}
+
+		@extend .ss-semibold;
+		@extend .tracked;
+		font-style: normal;
+		font-size: 18px;
+		color: $error;
+
+		*{
+			@extend .tracked;			
+			@extend .ss-semibold;
+			font-style: normal;
+			font-size: 18px;
+			color: $error;		
+		}
+
+	}
+
+}
+
+
+.slider{
+
+	.slick{
+		opacity: 0;
+		@include opacity(0);
+		@include transition(opacity,1s,0s,linear);
+
+		&.initialized{
+			opacity: 1;
+			@include opacity(1);
+		}
+	}
+}
+
+
+.media-link-container{
+	
+
+	.media-title,.media-preview{
+		@include transition(opacity,1s,0s,linear);
+		opacity: 1;		
+		@include opacity(1);
+	}
+
+	.media-link{
+		
+		.media-preview{
+			height: 0;
+			padding-top: 50%;
+
+			img{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+	}
+
+	&.building{
+		.media-title,.media-preview{
+			opacity: 0;
+			@include opacity(0);
+		}
+	}
+
+}
+
+$mediaLinkInset: $paddingOuter * 2;
+
+
+
+.building{
+	
+	&.slider{
+		background: $ultra-light;
+		height: calc(((100vw - 554px) * .5625) + 90px );
+	}
+
+	.media-link{
+		background: $ultra-light;
+		//height: 508px;
+	}	
+
+}
+
+
+
+//md
+@media ($md-query) {
+
+	.building{
+
+		&.slider{
+			height: calc(((100vw - 380px) * .5625) + 90px );
+		}
+
+		&.media-link-container{
+			
+		}
+	}
+
+}
+
+
+//sm
+@media ($sm-query) {
+
+	.building{
+
+		&.slider{
+			height: calc(((100vw - 260px) * .5625) + 90px );
+		}
+
+		&.media-link-container{
+
+		}
+	}
+
+}
+
+
+
+//xs
+@media ($xs-query) {
+
+	.building{
+
+		&.slider{
+			height: calc(((100vw - 30px) * .5625) + 90px );
+		}
+
+		&.media-link-container{
+
+		}
+	}	
+
+}
+

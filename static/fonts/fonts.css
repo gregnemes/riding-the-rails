@@ -1,0 +1,31 @@
+
+
+
+
+
+@font-face {
+	font-family: "SharpSansNo2-Medium";
+	src: url('/static/fonts/SharpSansNo2-Medium.eot');
+	src: url('/static/fonts/SharpSansNo2-Medium.eot?#iefix') format('opentype'),
+		url('/static/fonts/SharpSansNo2-Medium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SharpSansNo2-Semibold";
+	src: url('/static/fonts/SharpSansNo2-Semibold.eot');
+	src: url('/static/fonts/SharpSansNo2-Semibold.eot?#iefix') format('opentype'),
+		url('/static/fonts/SharpSansNo2-Semibold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SharpSansNo2-Extrabold";
+	src: url('/static/fonts/SharpSansNo2-Extrabold.eot');
+	src: url('/static/fonts/SharpSansNo2-Extrabold.eot?#iefix') format('opentype'),
+		url('/static/fonts/SharpSansNo2-Extrabold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

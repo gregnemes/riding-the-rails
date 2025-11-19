@@ -1,0 +1,105 @@
+
+
+/********** @GLOBALS *********/
+
+.row .row{
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+a{
+	@include transition(all, .125s);
+}
+
+a:focus{
+	color: $dark;
+}
+
+a:hover{
+	cursor: pointer;
+}
+
+.padded{
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.title,.subtitle,.section-title{
+	position: relative;
+}
+
+.section-title{
+	word-wrap: break-word;
+}
+
+.bordered{
+	border: 2px solid $brand;
+}
+
+
+.height-inherit{
+	height: inherit;
+	width: auto;
+	max-width: none;
+}
+
+.col-toc{
+	width: 23%;
+	float: left;
+	padding: 0 20px;
+
+	&.skinny{
+		width: 14%;
+	}
+}
+
+.site-table-of-contents{
+	z-index: 13;
+	li{
+		margin-bottom: 15px;
+
+		&:hover{
+			span{
+				border-bottom: 2px solid $brand;
+			}	
+			.toc-section-number{
+				border-bottom: 2px solid transparent;
+			}
+		}
+
+		span{
+			font-size: 15px;
+			display: inline-block;
+			line-height: 1.25;
+			border-bottom: 2px solid transparent;
+
+			&.toc-section-number{
+				margin-right: 10px;
+				@extend .tracked;
+				color: $brand;
+			}
+
+		}
+
+	}
+}
+
+#footer{
+	a{
+		font-size: 15px;
+	}
+
+	img{
+		padding: 5px;
+		opacity: .7;
+		@include opacity(.7);
+	}
+}
+
+
+
+
+
+
+
+

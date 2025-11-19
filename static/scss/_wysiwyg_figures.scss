@@ -1,0 +1,125 @@
+// figure {
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+// figure {
+//   position: relative;
+// }
+
+// figure[data-type=table] {
+//   clear: both;
+// }
+
+// figure[data-type=video] {
+//   text-align: center;
+//   clear: both;
+// }
+
+// // figure[data-type=video] p {
+// //   margin: 0;
+// // }
+
+// // figure[data-type=video].wy-figure-full p {
+// //   position: relative;
+// //   padding-bottom: 51%;
+// //   width: 100%;
+// //   height: 0;
+// // }
+
+// figure[data-type=video]{
+//   border: 1px solid red;
+//   // width: 100%;
+//   // height: 100%;
+//   // position: absolute;
+//   // left: 0;
+//   // top: 0;
+// }
+
+// // figure[data-type=image] {
+// //   position: relative;
+// //   margin-bottom: 24px;
+// // }
+
+// // figure[data-type=image] img {
+// //   width: 100%;
+// // }
+// // figure[data-type=image].wy-figure-large {
+// //   width: 100%;
+// //   clear: both;
+// // }
+// // figure[data-type=image].wy-figure-medium {
+// //   width: 100%;
+// // }
+// // figure[data-type=image].wy-figure-small {
+// //   width: 33%;
+// // }
+
+// // figure[data-type=quote] {
+// //   & blockquote {
+// //     color:$brand;    
+// //     @extend .bold;
+// //     border:none;
+// //   }
+// // }
+
+// figure[data-type=quote] figcaption {
+//   text-align: left;
+// }
+
+// // figure[data-type=quote].wy-figure-medium {
+
+// // }
+// // figure[data-type=quote].wy-figure-large {
+
+// // }
+
+
+// figure[data-type=quote].wy-figure-right {
+//   width: 100%;
+//   float: none;
+// }
+// figure[data-type=quote].wy-figure-left {
+//   width: 100%;
+//   float: none;
+// }
+
+// figure[data-type=quote] cite {
+//   @extend .bold;
+//   display: block;
+//   text-align: left;
+// }
+
+// figure[data-type=quote] cite:before {
+//   content: "\2014\00a0";
+// }
+
+// // .wy-figure-right {
+// //   float: right;
+// //   margin-left: 24px;
+// // }
+
+// // .wy-figure-right .wy-figure-controls {
+// //   right: 0;
+// // }
+
+// // .wy-figure-left {
+// //   float: left;
+// //   margin-right: 24px;
+// // }
+
+// @media screen and (max-width: 480px) {
+//   figure[data-type=image] {
+//     width: 100% !important;
+//     float: none !important;
+//     margin-left: 0;
+//     margin-right: 0;
+//   }
+
+//   figure[data-type=video] iframe {
+//     width: 100% !important;
+//     height: auto !important;
+//   }
+// }
+

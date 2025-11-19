@@ -1,0 +1,144 @@
+
+
+/********** @RESPONSIVE *********/
+
+
+//sm and up
+@media (min-width: 768px) {
+
+
+}	
+
+//lg
+@media ($lg-query) {
+
+
+
+}
+
+//md
+@media ($md-query) {
+
+	#menu{
+		padding-top: 75px;
+
+		li{
+			ul{
+				margin-bottom: 15px;
+			}
+
+			a{
+				font-size: 15px;
+			}
+
+			li a{
+				font-size: 12px;
+			}
+		}
+	}	
+
+	#header{
+		left: 11px;
+
+		a{
+			font-size: 13px;
+		}
+	}
+
+	#menu-toggle{
+		top: 63px;
+		left: 6px;	
+
+		#label span{
+			top: 3px;
+			font-size: 12px;
+		}			
+	}
+
+	.col-toc{
+		padding: 0 10px;
+	}
+
+
+}
+
+//sm
+@media ($sm-query) {
+
+	#menu-toggle{
+		top: 43px;
+	}	
+
+	.col-toc{
+		width: 100%;
+		float: none;
+		padding: 0 30px 0 15px;
+		margin-bottom: 40px;
+	}
+
+	.site-table-of-contents{
+		li{
+			margin-bottom: 6px;
+
+			a{
+				font-size: 12px;
+				line-height: 1.2;
+			}
+		}
+	}	
+
+
+} 
+
+//xs
+@media ($xs-query) {
+
+
+	#menu{
+		width: 100vw;
+		max-width: 414px;
+		padding: 60px 30px 100px 30px;
+	}
+
+	.menu-open{
+		width: 100vw;
+		height: 100vw;
+		overflow: hidden;
+
+		main,footer{
+			@include transform(translate(0px,0));
+		}
+	}	
+
+	#menu-toggle{
+		left: 9px;
+		top: 15px;
+	}	
+
+	.next-item{
+		padding: 15px 5px;
+		min-height: 0;
+		margin-bottom: 15px;
+		display: block;
+
+		.icon:before{
+			font-size: 50px;
+			display: block;
+		}
+	}
+
+	.section-title{
+		font-size: 20px;
+	}
+
+}
+
+
+//short screens
+@media (max-height: 700px) {
+
+
+}
+
+
+

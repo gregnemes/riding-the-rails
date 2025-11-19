@@ -1,0 +1,12 @@
+
+.wy-control blockquote{
+	font-family: "SharpSansNo2-Medium";
+}
+
+.wy-control h3,.wy-control h4,.wy-control h5{
+	/*font-family: "SharpSansNo2-Semibold";*/
+}
+
+.wy-control p{
+	font-family: "ff-tisa-web-pro";
+}

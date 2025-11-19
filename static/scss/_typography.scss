@@ -1,0 +1,290 @@
+@font-face {
+    font-family: 'modern_pictograms_proregular';
+    src: url('/static/fonts/modernpictogramspro_234.eot');
+    src: url('/static/fonts/modernpictogramspro_234?#iefix') format('embedded-opentype'),
+		url('/static/fonts/modernpictogramspro_234.woff') format('woff'),
+		url('/static/fonts/modernpictogramspro_234.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/********** @TYPOGRAPHY *********/
+
+body{
+	font-size: 14px;
+	font-family:"SharpSansNo2-Semibold", Helvetica, Arial, sans-serif; 
+	font-weight:normal; 
+	font-style:normal;
+	color: $dark;
+	letter-spacing: .01em;
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
+	font-weight: normal;
+	line-height: 1.2em;
+	font-weight: 500;
+	letter-spacing: .01em;
+}
+
+h1,.h1{
+	font-size: 90px;
+}
+
+h2,.h2{
+	font-size: 33px;
+}
+
+h3,.h3{
+	font-size: 24px;
+}
+
+h4,.h4{
+	font-size: 18px;
+}
+
+h5,.h5{
+	font-size: 17px;
+}
+
+h6,.h6{
+	font-size: 14px;
+}
+
+p{
+	font-size: 20px;
+	line-height: 1.9;
+}
+
+.icon{
+	&:before {
+    content: attr(data-icon);
+    font-family: "modern_pictograms_proregular";
+	font-size: 27px;
+	line-height: 100%;
+	vertical-align: middle;
+	position: relative;	
+	}
+	
+	&.large:before{
+		font-size: 72px;
+	}
+
+}
+
+
+.ss-medium{
+	font-family: "SharpSansNo2-Medium";
+}
+
+.ss-semibold{
+	font-family: "SharpSansNo2-Semibold";
+}
+
+.ss-extrabold{
+	font-family: "SharpSansNo2-Extrabold";
+}
+
+.serif{
+	font-family: "ff-tisa-web-pro";
+}
+
+.tracked{
+	letter-spacing: .05em;
+}
+
+.tracked-more{
+	letter-spacing: .15em;
+}
+
+
+.part-number{
+	@extend .tracked-more;
+	margin: 0;
+}
+
+.part-title{
+	@extend .tracked-more;
+	line-height: 1;
+	margin-top: 0em;
+	margin-bottom: .33em;
+}
+
+.site-title{
+	line-height: 1;
+	//opacity: .75;
+	//color: darken($brand,10%);
+}
+
+.site-subtitle{
+	font-size: 1.65em;
+	//width: 69%;
+}
+
+
+//lg
+@media (min-width: 1200px) {
+	body{
+		font-size: 18px;
+	}
+}
+
+//md
+@media (max-width: 1200px) {
+
+	h1,.h1{
+		font-size: 72px;
+	}
+
+	h2,.h2{
+		font-size: 32px;
+	}
+
+	h3,.h3{
+		font-size: 22px;
+	}
+
+	h4,.h4{
+		font-size: 16px;
+	}
+
+	h5,.h5{
+		font-size: 16px;
+	}
+
+	h6,.h6{
+		font-size: 14px;
+	}	
+
+}
+
+//sm
+@media (max-width: 992px) {
+	
+	body{
+		font-size: 14px;
+	}
+
+	h1,.h1{
+		font-size: 48px;
+	}
+
+	h2,.h2{
+		font-size: 28px;
+	}
+
+	h3,.h3{
+		font-size: 20px;
+	}
+
+	h4,.h4{
+		font-size: 16px;
+	}
+
+	h5,.h5{
+		font-size: 14px;
+	}
+
+	h6,.h6{
+		font-size: 14px;
+	}	
+
+} 
+
+
+//xs
+@media (max-width: 767px) {
+	body{
+		font-size: 14px;
+	}
+
+	h1,.h1{
+		font-size: 36px;
+	}
+
+	h2,.h2{
+		font-size: 23px;
+	}
+
+	h3,.h3{
+		font-size: 17px;
+	}
+
+	h4,.h4{
+		font-size: 14px;
+	}
+
+	h5,.h5{
+		font-size: 13px;
+	}
+
+	h6,.h6{
+		font-size: 13px;
+	}			
+
+}
+
+
+/********** @FORMATTING *********/
+
+.uppercase{
+	text-transform: uppercase;
+}
+
+.underline{
+	border-bottom:2px solid $light;
+}
+
+@include size-dependent( '.centered' ) {
+	text-align: center;
+}
+
+@include size-dependent( '.righted' ) {
+	text-align: right;
+}
+
+@include size-dependent( '.lefted' ) {
+	text-align: left;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.white{
+	color: white;
+}
+
+.light {
+	color: $light;
+}
+
+.dark{
+	color: $dark;
+}
+
+.medium{
+	color: $medium;
+}
+
+.brand{
+	color: $brand;
+}
+
+.red{
+	color: red;
+}
+
+@include size-dependent( ".righted" ) {
+	text-align: right;
+}
+
+@include size-dependent( ".centered" ) {
+	text-align: center;
+}
+
+
+

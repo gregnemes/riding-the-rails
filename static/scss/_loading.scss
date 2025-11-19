@@ -1,0 +1,59 @@
+
+.loading-veil{
+	z-index: 999;
+
+	&.loaded{
+		z-index: -999; 
+
+		img{
+			display: none;
+		}
+	}
+}
+
+
+.loading{
+	@include opacity(0);
+
+	&.loaded{
+		@include opacity(1);
+	}
+}
+
+
+.loading-transition{
+	@include transition(opacity,1s,0s,linear);	
+}
+
+#loading{
+	background: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+	img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%,-50%));
+	}
+
+}
+
+
+
+
+// .loading-veil{
+// 	z-index: -999; /* temporary */
+
+// 	img{
+// 		display: none; /* temporary */
+// 	}
+// }
+
+// .loading{
+// 	opacity: 1; /* temporary */
+// }
+
