@@ -1,0 +1,23 @@
+{
+  "name": "ridingtherails",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Riding the Rails static site (SCSS build + watch tooling)",
+  "scripts": {
+    "build:css": "grunt build",
+    "dev": "grunt serve"
+  },
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "load-grunt-tasks": "^5.1.0",
+    "sass": "^1.69.7"
+  },
+  "optionalDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
+
+
