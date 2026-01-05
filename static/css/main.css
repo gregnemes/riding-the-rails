@@ -2789,6 +2789,8 @@ a:hover {
     height: inherit; }
   .gallery-full .slick-track {
     height: inherit; }
+  .gallery-full .slick-slide > div {
+    height: inherit; }
   .gallery-full .slide {
     position: relative;
     height: inherit;

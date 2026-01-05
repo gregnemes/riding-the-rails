@@ -298,6 +298,12 @@
 		height: inherit;
 	}
 
+	.slick-slide {
+		>div {
+			height: inherit;
+		}
+	}
+
 	.slide {
 		&:focus {
 			outline: none;
